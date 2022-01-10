@@ -1,7 +1,5 @@
 # holberton-system_engineering-devops  
    
----   
-   
 ## 0x00. Shell, basics    
 
 **man or help**  
@@ -21,8 +19,6 @@
 - `help`  
 - `man`  
    
----   
-   
 ##  0x01. Shell, permissions  
    
 **man or help**   
@@ -38,5 +34,3 @@
 - `adduser`  
 - `useradd`  
 - `addgroup`  
-   
-
