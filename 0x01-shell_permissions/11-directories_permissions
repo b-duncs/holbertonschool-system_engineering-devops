@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod -R a+x cd
+chmod -R cd 777
