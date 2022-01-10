@@ -10,8 +10,6 @@
 - Keyboard Shortcuts for Bash  
 - LTS  
 
----  
-
 ## Requirements  
 
 - Allowed editors: `vi`, `vim`, `emacs`  
@@ -22,9 +20,7 @@
 - A `README.md` file at the root of the repo, containing a description of the repository  
 - A `README.md` file at the root of the folder of *this* project, describing what each script is doing  
 - You are not allowed to use backticks, `&&`, `||`, or `;`  
-- All your scripts must be executable, to make your file executable, use the `chmod` command: `chmod u+x file`    
-  
----  
+- All your scripts must be executable, to make your file executable, use the `chmod` command: `chmod u+x file`      
   
 ## Tasks  
 
