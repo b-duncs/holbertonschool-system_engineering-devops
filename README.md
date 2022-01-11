@@ -35,7 +35,7 @@
 - `useradd`  
 - `addgroup`  
    
-## 0x02. Shell, I/O Redirections and Filters  
+## 0x02. Shell, I/O redirections and filters  
    
 **man or help**  
    
