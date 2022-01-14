@@ -51,4 +51,18 @@
 - `tr`: translate or delete characters  
 - `rev`: reverse lines characterwise  
 - `cut`: remove sections from each line of files  
-- `passwd (5)` (*i.e.* `man 5 passwd`): passwd - password file     
+- `passwd (5)` (*i.e.* `man 5 passwd`): passwd - password file  
+   
+## 0x03. Shell, init files, variables, and expansions  
+   
+**man or help**  
+   
+- `printenv`: print all or part of environment  
+- `set`: set or unset options and positional parameters  
+- `unset`: unset values and attributes of variables and functions  
+- `export`: set the export attribute for variables  
+- `alias`: define or display aliases  
+- `unalias`: remove alias definitions  
+- `.`: execute commands in the current environment  
+- `source`: contains sample profile files for general or individual use  
+- `printf`: format and print data  
