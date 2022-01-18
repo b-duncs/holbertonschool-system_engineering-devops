@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -d /usr/* | wc -c
+echo $PATH/* | find -type f | wc -c
