@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#
+#prints "Best School" until integer is equal to eleven
 i=1
 until [ $i == 11 ]
 do
