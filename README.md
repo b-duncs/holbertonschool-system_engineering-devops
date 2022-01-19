@@ -66,3 +66,14 @@
 - `.`: execute commands in the current environment  
 - `source`: contains sample profile files for general or individual use  
 - `printf`: format and print data  
+   
+## 0x04. Loops, Conditions, and Parsing  
+   
+**man or help**  
+   
+- `env`: run a program in a modified environment  
+- `cut`: remove sections from each line of files  
+- `for`: repeatedly execute a set of commands for every element present  
+- `while`: repeatedly execute a set of commands as long as the *COMMAND* returns true  
+- `until`: executes a set of commands as long as the final command has an exit status which is not zero  
+- `if`: executes commands based on conditions
