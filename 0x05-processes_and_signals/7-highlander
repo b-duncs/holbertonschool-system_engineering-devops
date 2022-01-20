@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
-#
-while [ _ ]
+#SIGTERM is "kill -15" which means to end program peacefully (allows shutdown processes)
+#Displays same text as "4-to_infinity_and_beyond" and prints "I am invincible!!!" when the "kill -15" command is used
+while true
 do
 	echo "To infinity and beyond"
 	sleep 2
-
+	trap "echo I am invincible!!!" SIGTERM
+done
