@@ -76,4 +76,15 @@
 - `for`: repeatedly execute a set of commands for every element present  
 - `while`: repeatedly execute a set of commands as long as the *COMMAND* returns true  
 - `until`: executes a set of commands as long as the final command has an exit status which is not zero  
-- `if`: executes commands based on conditions
+- `if`: executes commands based on conditions  
+   
+## 0x05. Processes and Signals  
+   
+**man or help**  
+   
+- `ps`: report a snapshot of the current processes  
+- `pgrep`: looks through the currently running processes and lists the process IDS which match the selection criteria to stdout  
+- `pkill`: will send the specified signal (by default `SIGTERM`) to each process instead of listing them on stdout  
+- `kill`: terminate a process  
+- `exit`: cause normal process termination  
+- `trap`: trap signals
