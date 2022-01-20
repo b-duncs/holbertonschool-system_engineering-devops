@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#
+while [ _ ]
+do
+	echo "To infinity and beyond"
+	sleep 2
+
