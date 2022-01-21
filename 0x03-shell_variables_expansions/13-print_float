@@ -1,2 +1,3 @@
 #!/bin/bash
+#resource: https://www.cloudsavvyit.com/9108/how-to-use-printf-in-bash/
 printf %"3.2f\n" $NUM
