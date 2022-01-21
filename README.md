@@ -67,7 +67,7 @@
 - `source`: contains sample profile files for general or individual use  
 - `printf`: format and print data  
    
-## 0x04. Loops, Conditions, and Parsing  
+## 0x04. Shell, loops, conditions, and parsing  
    
 **man or help**  
    
@@ -78,7 +78,7 @@
 - `until`: executes a set of commands as long as the final command has an exit status which is not zero  
 - `if`: executes commands based on conditions  
    
-## 0x05. Processes and Signals  
+## 0x05. Shell, processes and signals  
    
 **man or help**  
    
