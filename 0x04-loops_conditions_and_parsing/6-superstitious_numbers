@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 #prints the integer while integer is less than or equal to 20 and prints "bad luck from China" after integer 4, and prints "bad luck from Japan" after integer 9, and prints "back luck from Italy" after integer 17
+#resource: https://bash.cyberciti.biz/guide/The_case_statement
 i=1
 while [ $i -le 20 ]
 do
