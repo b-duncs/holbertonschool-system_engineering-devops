@@ -7,6 +7,6 @@ echo "Hello Word" | sudo tee /var/www/html/index.html
 sudo touch /var/www/html/error404.html
 sudo echo "Ceci n'est pas une page" | sudo tee /var/www/html/error404.html
 location="\tlocation / {"
-replace_error404="\terror_page 404 /error404.html;\n\n\tlocation /redirect_me {\n\t\treturn 301 \$scheme://https://www.tiktok.com/@meg_grigss?_t=8X3nb1Rj0kV&_r=1;\n\t}\n\n\tlocation / {"
+replace_error404="\terror_page 404 /error404.html;\n\n\tlocation /redirect_me {\n\t\treturn 301 \$scheme://https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n\n\tlocation / {"
 sudo sed -i "s@^$location@$replace_error404" /etc/nginx/sites-available/default
 sudo service nginx restart
