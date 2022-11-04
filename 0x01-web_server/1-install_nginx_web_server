@@ -5,7 +5,8 @@ sudo apt-get install -y nginx
 sudo systemctl start nginx.service
 touch /var/www/html/index.html
 echo "Hello World" > /var/www/html/index.html
-touch /etc/nginx/sites-enabled/server
+mkdir /etc/nginx/sites-enabled/
+touch /etc/nginx/sites-enabled/default
 echo "server {
        listen 80;
        listen [::]:80;
@@ -18,5 +19,5 @@ echo "server {
        location / {
                try_files $uri $uri/ =404;
        }
-}" > /etc/nginx/sites-enabled/server
+}" > /etc/nginx/sites-enabled/default
 sudo service nginx restart
