@@ -4,11 +4,11 @@ sudo apt-get update
 sudo apt-get install -y nginx
 sudo systemctl start nginx.service
 sudo touch /var/www/html/index.html
-echo "Hello World" > /var/www/html/index.html
+echo "Hello World" | sudo tee /var/www/html/index.html
 find="^\tlocation / {"
 index="\tlocation /redirect_me {\n\t\treturn 301 \$scheme://tiktok.com/@meg_grigss?_t=8X3nb1Rj0kV&_r=1;\n\t}\n\n\tlocation / {"
 error404="\terror_page 404 /error404.html;\n\n\tlocation / {"
-echo "Ceci n'est pas une page" > /var/www/html/error404.html
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/error404.html
 sudo sed -i "s@$find@$index@" /etc/nginx/sites-available/default
 udo sed -i "s@$find@$error404@" /etc/nginx/sites-available/default
 sudo service nginx restart
