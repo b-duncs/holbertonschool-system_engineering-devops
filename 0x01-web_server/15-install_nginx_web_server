@@ -3,11 +3,11 @@
 sudo apt-get update
 sudo apt-get install -y nginx
 sudo systemctl start nginx.service
-touch /var/www/html/index.html
-echo "Hello World" > /var/www/html/index.html
-mkdir /etc/nginx/sites-enabled/
-touch /etc/nginx/sites-enabled/default
-echo "server {
+sudo touch /var/www/html/index.html
+sudo echo "Hello World" > /var/www/html/index.html
+sudo mkdir /etc/nginx/sites-enabled/
+sudo touch /etc/nginx/sites-enabled/default
+sudo echo "server {
        listen 80;
        listen [::]:80;
 
