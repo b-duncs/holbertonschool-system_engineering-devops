@@ -1,15 +1,12 @@
 #!/usr/bin/env bash
 # configure your Nginx server to have a custom 404 page that contains the string Ceci n'est pas une page
-sudo apt-get -y update
-sudo apt-get -y upgrade
+sudo apt-get update
 sudo apt-get -y install nginx
 sudo service nginx start
-echo "Hello Word" | sudo tee /var/www/html/index.nginx-debian.html
-
+echo "Hello Word" | sudo tee /var/www/html/index.html
 sudo touch /var/www/html/error404.html
 sudo echo "Ceci n'est pas une page" | sudo tee /var/www/html/error404.html
-
-searchString="\tlocation / {"
-stringReplace="\terror_page 404 /error404.html;\n\n\tlocation /redirect_me {\n\t\treturn 301 \$scheme://https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n\n\tlocation / {"
-sudo sed -i "s@^$searchString@$stringReplace@" /etc/nginx/sites-available/default
+location="\tlocation / {"
+replace_error404="\terror_page 404 /error404.html;\n\n\tlocation /redirect_me {\n\t\treturn 301 \$scheme://https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n\n\tlocation / {"
+sudo sed -i "s@^$location@$replace_error404" /etc/nginx/sites-available/default
 sudo service nginx restart
