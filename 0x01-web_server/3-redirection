@@ -2,7 +2,7 @@
 # configure your Nginx server so that /redirect_me is redirecting to another page
 sudo apt-get update
 sudo apt-get -y install nginx
-sudo service nginx start
+sudo systemctl start nginx.service
 echo "Hello World" | sudo tee /var/www/html/index.html
 location="\tlocation / {"
 index_replace="\tlocation /redirect_me {\n\t\treturn 301 \$scheme://https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n\n\tlocation / {"
