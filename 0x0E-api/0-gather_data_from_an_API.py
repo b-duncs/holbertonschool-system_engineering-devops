@@ -9,12 +9,14 @@ import requests
 if __name__ == "__main__":
     NUMBER_OF_DONE_TASKS = 0
     TOTAL_NUMBER_OF_TASKS = 0
-    userId = int(sys.argv[1])
+    userId = sys.argv[1]
     employee_id = requests.get(
         "https://jsonplaceholder.typicode.com/users/{}".format(userId)
     )
     EMPLOYEE_NAME = employee_id.json().get("name")
-    todo_list = requests.get("https://jsonplaceholder.typicode.com/todos")
+    todo_list = requests.get(
+        "https://jsonplaceholder.typicode.com/todos/?userId={}".format(userId)
+    )
 
     for k in todo_list.json():
         if k.get('userId') is id:
