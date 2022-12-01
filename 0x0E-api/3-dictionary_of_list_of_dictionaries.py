@@ -5,7 +5,6 @@ export data in the JSON format
 
 import json
 import requests
-import sys
 
 if __name__ == "__main__":
     employee_id = requests.get(
@@ -17,13 +16,13 @@ if __name__ == "__main__":
     for user in user_info:
         user_id = user['id']
         todo_list = requests.get(
-            'https://jsonplaceholder.typicode.com/todos/?userId={}'.format(user_id)
+            'https://jsonplaceholder.typicode.com/todos/?userId={}'
+            .format(user_id)
         )
         todo_info = json.loads(todo_list.text)
 
         task_list = []
         for task in todo_info:
-            # create a dictionary for each task
             dictionary = {
                 'username': user['username'],
                 'task': task['title'],
