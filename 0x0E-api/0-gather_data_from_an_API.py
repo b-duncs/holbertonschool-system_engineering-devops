@@ -5,29 +5,26 @@ returns information about his/her to-do list progress
 """
 
 import requests
-from sys import argv
-
 
 if __name__ == "__main__":
+    NUMBER_OF_DONE_TASKS = 0
+    TOTAL_NUMBER_OF_TASKS = 0
+    employee_id = requests.get(
+        "https://jsonplaceholder.typicode.com/users/{}".format(id)
+    )
+    EMPLOYEE_NAME = employee_id.json().get("name")
+    todo_list = requests.get("https://jsonplaceholder.typicode.com/todos")
 
-    task_list = []
-    count = 0
+    for k in todo_list.json():
+        if k.get('userId') is id:
+            all += 1
+        if k.get('userId') is id and k.get('completed') is True:
+            NUMBER_OF_DONE_TASKS += 1
 
-    user = requests.get('https://jsonplaceholder.typicode.com/users/{}'
-                        .format(argv[1]))
-    todo = requests.get('https://jsonplaceholder.typicode.com/users/{}/todos'
-                        .format(argv[1]))
+    print("Employee {} is done with tasks({}/{}):".format(
+        EMPLOYEE_NAME, NUMBER_OF_DONE_TASKS, TOTAL_NUMBER_OF_TASKS)
+    )
 
-    name = user.json().get('name')
-    tasks = todo.json()
-
-    for task in tasks:
-        if task.get('completed') is True:
-            count += 1
-            task_list.append(task.get('title'))
-
-    print('Employee {} is done with tasks({}/{}):'
-          .format(name, count, len(tasks)))
-
-    for task in task_list:
-        print("\t {}".format(task))
+    for k in todo_list.json():
+        if k.get('userId') is id and k.get('completed') is True:
+            print("\t {}".format(k.get('title')))
