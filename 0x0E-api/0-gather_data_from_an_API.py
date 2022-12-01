@@ -1,37 +1,37 @@
 #!/usr/bin/python3
 """
-Script that returns information about an employees  list progress
-given an employee id.
+using this REST API, for a given employee ID,
+returns information about his/her to-do list progress
 """
+
 import json
 import requests
 import sys
 
 if __name__ == "__main__":
-    num_done, num_tasks = 0, 0
-    userId = sys.argv[1]
+    NUMBER_OF_DONE_TASKS = 0
+    TOTAL_NUMBER_OF_TASKS = 0
+    user = sys.argv[1]
 
-    # create Response object for specific user and that user's tasks
-    url = 'https://jsonplaceholder.typicode.com/users/{}'.format(userId)
-    user_response = requests.get(url)
+    employee_id = requests.get(
+        'https://jsonplaceholder.typicode.com/users/{}'.format(user)
+    )
+    todo_list = requests.get(
+        'https://jsonplaceholder.typicode.com/todos/?userId={}'.format(user)
+    )
+    user_info = json.loads(employee_id.text)
+    todo_info = json.loads(todo_list.text)
 
-    url = 'https://jsonplaceholder.typicode.com/todos/?userId={}'\
-        .format(userId)
-    todo_response = requests.get(url)
-
-    # create Dictionary objects from response objects
-    user_info = json.loads(user_response.text)
-    todo_info = json.loads(todo_response.text)
-
-    employee_name = user_info['name']
+    EMPLOYEE_NAME = user_info['name']
 
     for task in todo_info:
-        num_tasks += 1
+        TOTAL_NUMBER_OF_TASKS += 1
         if task['completed']:
-            num_done += 1
+            NUMBER_OF_DONE_TASKS += 1
 
     print("Employee {} is done with tasks({}/{}):"
-          .format(employee_name, num_done, num_tasks))
+          .format(EMPLOYEE_NAME, NUMBER_OF_DONE_TASKS, TOTAL_NUMBER_OF_TASKS)
+          )
 
     for task in todo_info:
         if task['completed']:
