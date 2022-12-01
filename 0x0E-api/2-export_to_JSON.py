@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-export data in the CSV format
+export data in the JSON format
 """
 
 import json
