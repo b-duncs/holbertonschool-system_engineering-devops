@@ -1,37 +1,33 @@
 #!/usr/bin/python3
-""" Grabs info from API """
-import json
-import sys
-from urllib import request
+"""
+using this REST API, for a given employee ID,
+returns information about his/her to-do list progress
+"""
+
+import requests
+from sys import argv
 
 
 if __name__ == "__main__":
 
-    tasks = 0
-    tasks_comp = 0
-    req = request.Request('https://jsonplaceholder.typicode.com/todos')
-    req_user = request.Request('https://jsonplaceholder.typicode.com/users')
+    task_list = []
+    count = 0
 
-    with request.urlopen(req) as resp:
-        data = json.loads(resp.read().decode('utf-8'))
-        for x in data:
-            if x.get('userId') == int(sys.argv[1]):
-                tasks += 1
-                if x.get('completed') is True:
-                    tasks_comp += 1
+    user = requests.get('https://jsonplaceholder.typicode.com/users/{}'
+                        .format(argv[1]))
+    todo = requests.get('https://jsonplaceholder.typicode.com/users/{}/todos'
+                        .format(argv[1]))
 
-    with request.urlopen(req_user) as resu:
-        data = json.loads(resu.read().decode('utf-8'))
-        for k in data:
-            if k.get('id') == int(sys.argv[1]):
-                name = k['name']
+    name = user.json().get('name')
+    tasks = todo.json()
 
-    print('Employee {} is done with tasks({}/{}):'.format(name,
-          tasks_comp, tasks))
+    for task in tasks:
+        if task.get('completed') is True:
+            count += 1
+            task_list.append(task.get('title'))
 
-    with request.urlopen(req) as resp:
-        data = json.loads(resp.read().decode('utf-8'))
-        for x in data:
-            if x.get('userId') == int(sys.argv[1]):
-                if x.get('completed') is True:
-                    print('\t {}'.format(x['title']))
+    print('Employee {} is done with tasks({}/{}):'
+          .format(name, count, len(tasks)))
+
+    for task in task_list:
+        print("\t {}".format(task))
